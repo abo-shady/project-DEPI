@@ -1,0 +1,12 @@
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: host.docker.internal   # لو Postgres شغال بره الـ container
+      port: 5432
+      user: postgres
+      pass: "123456"
+      dbname: postgres_db
+      schema: public

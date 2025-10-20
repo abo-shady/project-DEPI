@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_telecom  # Logical name – keep this as-is (matches your model)
+    # database: your_actual_database_name  # OMIT this if the raw table is in the SAME DB as your dbt target (e.g., same as profiles.yml dbname)
+    #   Example: If different DB, uncomment and set: database: telecom_raw_db
+    schema: public  # CHANGE THIS to your actual schema (e.g., 'public', 'raw', 'telecom')
+    tables:
+      - name: telecom_customer_churn  # Exact table name – keep as-is
+        # Optional: Add tests or freshness if needed later
