@@ -1,10 +1,9 @@
--- models/intermediate/int_customers_imputed.sql
 {{ config(materialized='ephemeral') }}
 
 WITH source_data AS (
     SELECT * FROM {{ ref('stg_telecom_customer_churn') }}
 ),
-
+-- Calculate median values to replace NULLs
 stats AS (
     SELECT
         PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY total_charges) AS median_total_charges,

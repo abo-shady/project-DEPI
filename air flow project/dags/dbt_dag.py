@@ -13,7 +13,6 @@ with DAG(
     catchup=False,
     tags=['dbt'],
 ) as dag:
-    # using connector of dbt to run models
     dbt_run_task = BashOperator(
     task_id='run_dbt_models',
     bash_command=f"cd {DBT_PROJECT_DIR} && dbt run --profiles-dir ."

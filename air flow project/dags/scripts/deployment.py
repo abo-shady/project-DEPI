@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 
 
-model_path = r'C:\Users\medos\Downloads\air flow project\include\best_model.pkl'
+model_path = 'best_model.pkl'
 
 try:
     with open(model_path, 'rb') as f:
@@ -14,7 +14,7 @@ try:
   
     
     st.set_page_config(page_title="Customer Churn Predictor", layout="wide")
-    st.title("🔮 Customer Churn Prediction")
+    st.title(" Customer Churn Prediction")
     st.write("This app predicts whether a customer is likely to churn based on their details. Please fill in the information on the left sidebar.")
 
     st.sidebar.header("Enter Customer Details:")
@@ -113,9 +113,9 @@ try:
         churn_probability = prediction_proba[0][1] * 100
         
         if prediction[0] == 1:
-            st.error(f"🔴 This customer is likely to **Churn** (Probability: {churn_probability:.2f}%)")
+            st.error(f" This customer is likely to **Churn** (Probability: {churn_probability:.2f}%)")
         else:
-            st.success(f"✅ This customer is likely to **Stay** (Probability of Churning: {churn_probability:.2f}%)")
+            st.success(f" This customer is likely to **Stay** (Probability of Churning: {churn_probability:.2f}%)")
 
         
 

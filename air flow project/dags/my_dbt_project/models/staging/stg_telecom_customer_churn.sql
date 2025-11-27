@@ -1,10 +1,10 @@
--- models/staging/stg_telecom_customer_churn.sql
+-- this model define the staging table doesn't store data 
 {{ config(materialized='ephemeral') }}
 
 WITH source_data AS (
     SELECT * FROM {{ source('raw_telecom', 'telecom_customer_churn') }}
 )
-
+-- Clean the data: rename columns 
 SELECT
     "Gender" as gender,
     "Age" as age,

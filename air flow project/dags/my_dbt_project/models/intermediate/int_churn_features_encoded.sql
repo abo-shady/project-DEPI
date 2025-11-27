@@ -1,10 +1,10 @@
--- models/intermediate/int_churn_features_encoded.sql
+-- the final model that stores in database 
 {{ config(materialized='table') }}
 
 with source_data as (
     select * from {{ ref('int_customers_imputed') }}
 ),
-
+-- encode categorical variables into numerical values
 encoded as (
     select
         age::int as age,

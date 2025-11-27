@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
 from datetime import datetime
 
-PYTHON_SCRIPT_PATH = '/usr/local/airflow/dags/scripts/python.py'
+PYTHON_SCRIPT_PATH = r'C:\Users\medos\Downloads\project-DEPI\air flow project\dags\scripts\python.py'
 
 with DAG(
     dag_id='run_python_script_dag',
