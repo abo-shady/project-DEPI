@@ -2,7 +2,6 @@ import pickle
 import streamlit as st
 import numpy as np
 from pathlib import Path
-import joblib  
 
 BASE_DIR = Path(__file__).resolve().parent
 model_path = BASE_DIR / "best_model.pkl"
